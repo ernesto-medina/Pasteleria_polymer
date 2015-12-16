@@ -1,0 +1,31 @@
+{
+  "name": "pasteleria_polymer",
+  "homepage": "https://github.com/ernesto-medina/Pasteleria_polymer",
+  "authors": [
+    "Luis Ernesto Garcia Medina <ernesto.r.2.em@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.2.0",
+    "paper-toolbar": "PolymerElements/paper-toolbar#~1.1.2",
+    "paper-drawer-panel": "PolymerElements/paper-drawer-panel#~1.0.6",
+    "paper-scroll-header-panel": "PolymerElements/paper-scroll-header-panel#~1.0.13",
+    "paper-menu": "PolymerElements/paper-menu#~1.2.1",
+    "iron-icons": "PolymerElements/iron-icons#~1.0.5",
+    "paper-icon-button": "PolymerElements/paper-icon-button#~1.0.6",
+    "iron-selector": "PolymerElements/iron-selector#~1.0.8",
+    "iron-pages": "PolymerElements/iron-pages#~1.0.5",
+    "paper-material": "PolymerElements/paper-material#~1.0.5",
+    "paper-card": "PolymerElements/paper-card#~1.0.8"
+  }
+}
