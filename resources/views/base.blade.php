@@ -4,24 +4,24 @@
     <title>Laravel</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
-    <script type="text/javascript" src="bower_components/webcomponentsjs/webcomponents.js"></script>
-    <link rel="import" href="bower_components/paper-styles/paper-styles-classes.html">
-    <link rel="import" href="bower_components/paper-material/paper-material.html">
-    <link rel="import"  href="bower_components/polymer/polymer.html">
-    <link rel="import" href="bower_components/paper-toolbar/paper-toolbar.html">
-    <link rel="import" href="bower_components/paper-drawer-panel/paper-drawer-panel.html">
-    <link rel="import" href="bower_components/paper-scroll-header-panel/paper-scroll-header-panel.html">
-    <link rel="import" href="bower_components/paper-menu/paper-menu.html">
-    <link rel="import" href="bower_components/iron-flex-layout/classes/iron-flex-layout.html">
-    <link rel="import" href="bower_components/iron-icons/iron-icons.html">
-    <link rel="import" href="bower_components/iron-pages/iron-pages.html">
-    <link rel="import" href="bower_components/iron-selector/iron-selector.html">
-    <link rel="import" href="bower_components/paper-icon-button/paper-icon-button.html">
-    <link rel="import" href="bower_components/paper-card/paper-card.html">
+    <script type="text/javascript" src="bower_resources/webcomponentsjs/webcomponents.js"></script>
+    <link rel="import" href="bower_resources/paper-styles/paper-styles-classes.html">
+    <link rel="import" href="bower_resources/paper-material/paper-material.html">
+    <link rel="import"  href="bower_resources/polymer/polymer.html">
+    <link rel="import" href="bower_resources/paper-toolbar/paper-toolbar.html">
+    <link rel="import" href="bower_resources/paper-drawer-panel/paper-drawer-panel.html">
+    <link rel="import" href="bower_resources/paper-scroll-header-panel/paper-scroll-header-panel.html">
+    <link rel="import" href="bower_resources/paper-menu/paper-menu.html">
+    <link rel="import" href="bower_resources/iron-flex-layout/classes/iron-flex-layout.html">
+    <link rel="import" href="bower_resources/iron-icons/iron-icons.html">
+    <link rel="import" href="bower_resources/iron-pages/iron-pages.html">
+    <link rel="import" href="bower_resources/iron-selector/iron-selector.html">
+    <link rel="import" href="bower_resources/paper-icon-button/paper-icon-button.html">
+    <link rel="import" href="bower_resources/paper-card/paper-card.html">
 
 
-    <link rel="import" href="bower_components/paper-styles/paper-styles.html">
-    <link rel="import" href="bower_components/paper-material/paper-material.html">
+    <link rel="import" href="bower_resources/paper-styles/paper-styles.html">
+    <link rel="import" href="bower_resources/paper-material/paper-material.html">
     <style>
         html, body {
             height: 100%;
@@ -97,13 +97,14 @@
 
 
             <div id="cards">
+                @yield('content')
                 <paper-material elevation="1">
                     ... content ...
                 </paper-material>
                 <paper-card heading="Card Title">
                     <div class="card-content">Some content</div>
                     <div class="card-actions">
-                        <paper-button>Some action</paper-button>
+                        <paper-button><a class="icon cmn-tut" data-title="Inicio" href="{{ url('/pruebarutas') }}">Ir a otra pagina</a></paper-button>
                     </div>
                 </paper-card>
                 <paper-card heading="Card Title" image="http://jsequeiros.com/sites/default/files/imagen-cachorro-comprimir.jpg?1399003306">
