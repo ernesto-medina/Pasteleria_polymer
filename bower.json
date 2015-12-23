@@ -26,6 +26,7 @@
     "iron-selector": "PolymerElements/iron-selector#~1.0.8",
     "iron-pages": "PolymerElements/iron-pages#~1.0.5",
     "paper-material": "PolymerElements/paper-material#~1.0.5",
-    "paper-card": "PolymerElements/paper-card#~1.0.8"
+    "paper-card": "PolymerElements/paper-card#~1.0.8",
+    "iron-icon": "PolymerElements/iron-icon#~1.0.7"
   }
 }
