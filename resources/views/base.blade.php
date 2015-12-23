@@ -4,29 +4,11 @@
     <title>Laravel</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
-    <script type="text/javascript" src="bower_resources/webcomponentsjs/webcomponents.js"></script>
-    <link rel="import" href="bower_resources/paper-styles/paper-styles-classes.html">
-    <link rel="import" href="bower_resources/paper-material/paper-material.html">
-    <link rel="import"  href="bower_resources/polymer/polymer.html">
-    <link rel="import" href="bower_resources/paper-toolbar/paper-toolbar.html">
-    <link rel="import" href="bower_resources/paper-drawer-panel/paper-drawer-panel.html">
-    <link rel="import" href="bower_resources/paper-scroll-header-panel/paper-scroll-header-panel.html">
-    <link rel="import" href="bower_resources/paper-menu/paper-menu.html">
-    <link rel="import" href="bower_resources/iron-flex-layout/classes/iron-flex-layout.html">
-    <link rel="import" href="bower_resources/iron-icons/iron-icons.html">
-    <link rel="import" href="bower_resources/iron-pages/iron-pages.html">
-    <link rel="import" href="bower_resources/iron-selector/iron-selector.html">
-    <link rel="import" href="bower_resources/paper-icon-button/paper-icon-button.html">
-    <link rel="import" href="bower_resources/paper-card/paper-card.html">
-
-
-    <link rel="import" href="bower_resources/paper-styles/paper-styles.html">
-    <link rel="import" href="bower_resources/paper-material/paper-material.html">
+    @extends('element')
     <style>
         html, body {
             height: 100%;
         }
-
         body {
             margin: 0;
             padding: 0;
@@ -38,7 +20,7 @@
         #cards {
         @apply(--layout-vertical);
         @apply(--center-justified);
-            max-width: 400px;
+            max-width: 600px;
             margin-left: auto;
             margin-right: auto;
         }
@@ -46,37 +28,34 @@
             width: 100%;
             margin-bottom: 16px;
         }
+        paper-icon-item iron-icon {
+            color: #757575;
+        }
     </style>
 </head>
 <body unresolved class="fullbleed layout vertical">
 <span id="browser-sync-binding"></span>
 <template is="dom-bind" id="app">
     <paper-drawer-panel id="paperDrawerPanel">
-        <!-- Drawer Scroll Header Panel -->
         <paper-scroll-header-panel drawer fixed>
 
-            <!-- Drawer Toolbar -->
             <paper-toolbar id="drawerToolbar">
                 <span class="paper-font-title">Menu</span>
             </paper-toolbar>
 
             <!-- Drawer Content -->
-            {{--<paper-menu class="list" attr-for-selected="data-route" selected="[[route]]">--}}
-            {{--<a data-route="home" href="{{baseUrl}}">--}}
-            {{--<iron-icon icon="home"></iron-icon>--}}
-            {{--<span>Home</span>--}}
-            {{--</a>--}}
+            <paper-menu selected="0" selectable="paper-icon-item" on-iron-activate="menuSelect">
+                <paper-icon-item role="menuitem">
+                    <iron-icon icon="loyalty" item-icon></iron-icon>Inbox
+                </paper-icon-item>
+                </paper-menu>
+            <paper-menu class="list">
+                <a href="{{ url('/pruebarutas') }}">
+                    <iron-icon icon="loyalty"></iron-icon>
+                    <span>Productos</span>
+                </a>
+            </paper-menu>
 
-            {{--<a data-route="users" href="{{baseUrl}}users">--}}
-            {{--<iron-icon icon="info"></iron-icon>--}}
-            {{--<span>Users</span>--}}
-            {{--</a>--}}
-
-            {{--<a data-route="contact" href="{{baseUrl}}contact">--}}
-            {{--<iron-icon icon="mail"></iron-icon>--}}
-            {{--<span>Contact</span>--}}
-            {{--</a>--}}
-            {{--</paper-menu>--}}
         </paper-scroll-header-panel>
 
         <paper-scroll-header-panel main id="headerPanelMain" condenses keep-condensed-header>
@@ -101,21 +80,12 @@
                 <paper-material elevation="1">
                     ... content ...
                 </paper-material>
-                <paper-card heading="Card Title">
-                    <div class="card-content">Some content</div>
-                    <div class="card-actions">
-                        <paper-button><a class="icon cmn-tut" data-title="Inicio" href="{{ url('/pruebarutas') }}">Ir a otra pagina</a></paper-button>
-                    </div>
-                </paper-card>
-                <paper-card heading="Card Title" image="http://jsequeiros.com/sites/default/files/imagen-cachorro-comprimir.jpg?1399003306">
-                    ...
-                </paper-card>
-                <paper-card heading="Card Title" image="http://jsequeiros.com/sites/default/files/imagen-cachorro-comprimir.jpg?1399003306">
-                    ...
-                </paper-card>
             </div>
         </paper-scroll-header-panel>
     </paper-drawer-panel>
 </template>
+
+<!-- Scripts -->
+{{--<script type="text/javascript" src="assets/bootstrap/js/bootstrap.min.js"></script>--}}
 </body>
 </html>
