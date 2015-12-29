@@ -6,82 +6,75 @@
     <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
     @extends('element')
     <style>
-        html, body {
-            height: 100%;
+        /*
+        Revisar la guia de google para desarrollo de menú:
+        https://www.google.com/design/spec/components/lists.html#lists-specs
+        */
+        .elementmenu {
+            min-height: 30px;
+            padding-top: 8px;
+            padding-bottom: 8px;
+            font-family: 'Roboto', monospace;
         }
-        body {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            display: table;
-            font-weight: 100;
-            font-family: 'Lato';
+        paper-toolbar.toolbar-menu {
+            background: url("http://rack.2.mshcdn.com/media/ZgkyMDE1LzA5LzEzLzNjL2dvb2dsZXRodW1iLmIyNGE0LmpwZwpwCXRodW1iCTk1MHg1MzQjCmUJanBn/63126c72/af4/google-thumb.jpg");
         }
-        #cards {
-        @apply(--layout-vertical);
-        @apply(--center-justified);
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        paper-card {
-            width: 100%;
-            margin-bottom: 16px;
-        }
-        paper-icon-item iron-icon {
-            color: #757575;
+
+        .content-cards {
+            padding-left: 25px;
+            padding-right: 25px;
+            padding-top: 16px;
+            padding-bottom: 16px;
         }
     </style>
 </head>
-<body unresolved class="fullbleed layout vertical">
-<span id="browser-sync-binding"></span>
+<body class="fullbleed layout horizontal center-center">
 <template is="dom-bind" id="app">
-    <paper-drawer-panel id="paperDrawerPanel">
-        <paper-scroll-header-panel drawer fixed>
-
-            <paper-toolbar id="drawerToolbar">
-                <span class="paper-font-title">Menu</span>
+    <paper-drawer-panel class="flex">
+        <paper-header-panel drawer>
+            <paper-toolbar class="tall toolbar-menu">
+                <div>Application</div>
             </paper-toolbar>
-
-            <!-- Drawer Content -->
-            <paper-menu selected="0" selectable="paper-icon-item" on-iron-activate="menuSelect">
-                <paper-icon-item role="menuitem">
-                    <iron-icon icon="loyalty" item-icon></iron-icon>Inbox
-                </paper-icon-item>
+            <div class="vertical layout">
+                <paper-menu >
+                    <div class="flex elementmenu">
+                        <paper-item><iron-icon icon="account-circle"></iron-icon> Opción 1</paper-item>
+                    </div>
+                    <div class="flex elementmenu">
+                        <paper-item>Opción 2</paper-item>
+                    </div>
                 </paper-menu>
-            <paper-menu class="list">
-                <a href="{{ url('/pruebarutas') }}">
-                    <iron-icon icon="loyalty"></iron-icon>
-                    <span>Productos</span>
-                </a>
-            </paper-menu>
-
-        </paper-scroll-header-panel>
-
-        <paper-scroll-header-panel main id="headerPanelMain" condenses keep-condensed-header>
-            <paper-toolbar id="mainToolbar" class="tall">
-                <paper-icon-button id="paperToggle" icon="menu" paper-drawer-toggle></paper-icon-button>
-                <span class="flex"></span>
-
-                <!-- Toolbar icons -->
-                <paper-icon-button icon="refresh"></paper-icon-button>
-                <paper-icon-button icon="search"></paper-icon-button>
-
-                <!-- Application name -->
-                <div class="middle middle-container center horizontal layout">
-                    <div class="app-name">Bienvenido</div>
-                </div>
-
-            </paper-toolbar>
-
-
-            <div id="cards">
-                @yield('content')
-                <paper-material elevation="1">
-                    ... content ...
-                </paper-material>
             </div>
-        </paper-scroll-header-panel>
+        </paper-header-panel>
+        <paper-header-panel main mode="waterfall-tall">
+            <paper-toolbar>
+                <paper-icon-button icon="menu" paper-drawer-toggle></paper-icon-button>
+                <div>Title</div>
+            </paper-toolbar>
+            <div class="content-cards">
+                <paper-card heading="Tarjeta de prueba" image="http://rack.2.mshcdn.com/media/ZgkyMDE1LzA5LzEzLzNjL2dvb2dsZXRodW1iLmIyNGE0LmpwZwpwCXRodW1iCTk1MHg1MzQjCmUJanBn/63126c72/af4/google-thumb.jpg">
+                    <div class="card-content"> Esta es una tarjeta de prueba...</div>
+                </paper-card>
+                <paper-card heading="Tarjeta de prueba" image="http://rack.2.mshcdn.com/media/ZgkyMDE1LzA5LzEzLzNjL2dvb2dsZXRodW1iLmIyNGE0LmpwZwpwCXRodW1iCTk1MHg1MzQjCmUJanBn/63126c72/af4/google-thumb.jpg">
+                    <div class="card-content"> Esta es una tarjeta de prueba...</div>
+                    <div class="card-actions">
+                        <paper-button raised>Coso genial</paper-button>
+                    </div>
+                </paper-card>
+                <paper-card elevation="3" heading="Tarjeta de prueba" image="http://rack.2.mshcdn.com/media/ZgkyMDE1LzA5LzEzLzNjL2dvb2dsZXRodW1iLmIyNGE0LmpwZwpwCXRodW1iCTk1MHg1MzQjCmUJanBn/63126c72/af4/google-thumb.jpg">
+                    <div class="card-content"> Esta es una tarjeta de prueba...</div>
+                    <div class="card-actions">
+                        <paper-button raised>Coso genial</paper-button>
+                    </div>
+                </paper-card>
+                <paper-card heading="Tarjeta de prueba" image="http://rack.2.mshcdn.com/media/ZgkyMDE1LzA5LzEzLzNjL2dvb2dsZXRodW1iLmIyNGE0LmpwZwpwCXRodW1iCTk1MHg1MzQjCmUJanBn/63126c72/af4/google-thumb.jpg">
+                    <div class="card-content"> Esta es una tarjeta de prueba...</div>
+                    <div class="card-actions">
+                        <paper-button raised>Coso genial</paper-button>
+                    </div>
+                </paper-card>
+            </div>
+        </paper-header-panel>
     </paper-drawer-panel>
 </template>
 
